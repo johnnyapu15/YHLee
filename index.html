@@ -31,7 +31,7 @@
                 for (i = 0; i < n; i++) {
                     var r = Math.floor(Math.random() * 19) + 1;
                     resArr[r-1] += 1;
-                    st += "\n--for " + i + " attempt, the random number is " + r; 
+                    st += "\n--for " + (i+1) + " attempt, the random number is " + r; 
                 }
                 st += "\n\n----------result-----------\n"
                 resArr.forEach(function(e, i){
