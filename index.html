@@ -4,14 +4,19 @@
         <style type = "text/css">
             body {
                 background: #FFFFFF
-                url(./img/test.png)
+                url(./img/yh.png)
             }
         </style>
 
     </head>
     <body>
-        This page is for Younghan-Lee The Master of Chef de cuisine(HE IS NOT KOREAN).<br>
-        Insert the number to get result. <br>
+        <h1>
+            This page is for Younghan-Lee The Master of Chef de cuisine(HE IS NOT KOREAN).<br>
+        </h1>
+        <h2>
+            Insert the number to get result. <br>
+        </h2>
+        
         <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,''); calc(this.value);"/> 
         <br><br>
         <a id="result">
@@ -25,6 +30,9 @@
                 resArr[i] = 0;
             }
             function calc(txt) {
+                for (i = 0; i < 19; i++) {
+                    resArr[i] = 0;
+                }
                 var st;
                 var n = parseInt(txt);
                 st += n + " tries...";
@@ -35,7 +43,11 @@
                 }
                 st += "\n\n----------result-----------\n"
                 resArr.forEach(function(e, i){
-                    st += (i+1) + ": " + e + "\n";
+                    st += (i+1) + ": " + e + " ... ";
+                    for (j = 0;j < e;j++) {
+                        st += "#";
+                    }
+                    st += "\n";
                 });
                 st += "\n---------------------------"
                 res.innerText = st;
