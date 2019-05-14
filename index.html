@@ -1,1 +1,27 @@
-test
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type = "text/css">
+            body {
+                background: #FFFFFF
+                url(./img/test.png)
+            }
+        </style>
+        <script>
+            $("box").change(function() {
+                res = "";
+                n = $("box").text();
+                res += n;
+                $("result").text() = res;
+            })
+        </script>
+    </head>
+    <body>
+        This page is for Younghan-Lee The Master of Chef de cuisine(NOT KOREAN).
+        Insert the number to get result.
+        <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/> 
+        <a id="result">
+            The output will be printed here
+        </a>
+    </body>
+</html>
