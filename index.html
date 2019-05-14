@@ -30,27 +30,31 @@
                 resArr[i] = 0;
             }
             function calc(txt) {
-                for (i = 0; i < 19; i++) {
-                    resArr[i] = 0;
-                }
-                var st;
-                var n = parseInt(txt);
-                st += n + " tries...";
-                for (i = 0; i < n; i++) {
-                    var r = Math.floor(Math.random() * 19) + 1;
-                    resArr[r-1] += 1;
-                    st += "\n--for " + (i+1) + " attempt, the random number is " + r; 
-                }
-                st += "\n\n----------result-----------\n"
-                resArr.forEach(function(e, i){
-                    st += (i+1) + ": " + e + " ... ";
-                    for (j = 0;j < e;j++) {
-                        st += "#";
+                if (txt != undefined) {
+
+                    for (i = 0; i < 19; i++) {
+                        resArr[i] = 0;
                     }
-                    st += "\n";
-                });
-                st += "\n---------------------------"
-                res.innerText = st;
+                    var st;
+                    var n = parseInt(txt);
+                    
+                    st += n + " tries...";
+                    for (i = 0; i < n; i++) {
+                        var r = Math.floor(Math.random() * 19) + 1;
+                        resArr[r-1] += 1;
+                        st += "\n--for " + (i+1) + " attempt, the random number is " + r; 
+                    }
+                    st += "\n\n----------result-----------\n"
+                    resArr.forEach(function(e, i){
+                        st += (i+1) + ": " + e + " ... ";
+                        for (j = 0;j < e;j++) {
+                            st += "#";
+                        }
+                        st += "\n";
+                    });
+                    st += "\n---------------------------"
+                    res.innerText = st;
+                }
             }
 
         </script>
