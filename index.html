@@ -10,8 +10,8 @@
 
     </head>
     <body>
-        This page is for Younghan-Lee The Master of Chef de cuisine(NOT KOREAN).
-        Insert the number to get result.
+        This page is for Younghan-Lee The Master of Chef de cuisine(HE IS NOT KOREAN).<br>
+        Insert the number to get result. <br>
         <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,''); calc(this.value);"/> 
         <br><br>
         <a id="result">
@@ -31,13 +31,13 @@
                 for (i = 0; i < n; i++) {
                     var r = Math.floor(Math.random() * 19) + 1;
                     resArr[r-1] += 1;
-                    st += "<br>--for " + i + " attempt, the random number is " + r; 
+                    st += "\n--for " + i + " attempt, the random number is " + r; 
                 }
-                st += "<br><br>----------result-----------"
+                st += "\n\n----------result-----------\n"
                 resArr.forEach(function(e, i){
-                    st += i + ": " + e;
+                    st += (i+1) + ": " + e + "\n";
                 });
-                st += "<br>---------------------------"
+                st += "\n---------------------------"
                 res.innerText = st;
             }
 
