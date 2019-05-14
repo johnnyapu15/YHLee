@@ -13,20 +13,30 @@
         This page is for Younghan-Lee The Master of Chef de cuisine(NOT KOREAN).
         Insert the number to get result.
         <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" onchange="calc()"/> 
-        \n\n
+        <br><br>
         <a id="result">
             The output will be printed here
         </a>
     </body>
     <script>
             var res = document.getElementById("result");
+            var resArr = new Array();
+            for (i = 0; i < 19; i++) {
+                resArr[i] = 0;
+            }
             function calc() {
                 st = "";
                 var n = parseInt(document.getElementById("box").innerText);
                 for (i = 0; i < n; i++) {
                     var r = Math.floor(Math.random() * 19) + 1;
-                   st += "\n--for " + i + " attempt, the random number is " + r; 
+                    resArr[r-1] += 1;
+                    st += "<br>--for " + i + " attempt, the random number is " + r; 
                 }
+                st += "<br><br>----------result-----------"
+                resArr.forEach(function(e, i){
+                    st += i + ": " + e;
+                });
+                st += "<br>---------------------------"
                 res.innerText = st;
             }
 
