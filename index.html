@@ -17,7 +17,8 @@
             This page is for Younghan-Lee The Master of Chef de cuisine<br>(HE IS NOT KOREAN! Congrats.)
         </h1>
         <h2>
-            Insert the number to get result.
+            Insert the number to get result. (The number of index, The number of random numbers)
+            <input type="text" id="box2" onKeyup="this.value=this.value.replace(/[^0-9]/g,''); setIdx(this.value);"/> 
             <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,''); calc(this.value);"/> 
         </h2>
         
@@ -30,13 +31,19 @@
     <script>
             var res = document.getElementById("result");
             var resArr = new Array();
-            for (i = 0; i < 19; i++) {
-                resArr[i] = 0;
+            var indexes = 0;
+            function setIdx(num) {
+                indexes = parseInt(num);
+                resArr = new Array();
+                for (i = 0; i < num; i++) {
+                    resArr[i] = 0;
+                }
             }
+            
             function calc(txt) {
                 if (txt != undefined) {
 
-                    for (i = 0; i < 19; i++) {
+                    for (i = 0; i < num; i++) {
                         resArr[i] = 0;
                     }
                     var st = "";
@@ -44,7 +51,7 @@
                     
                     st += n + " tries...The random number are: ";
                     for (i = 0; i < n; i++) {
-                        var r = Math.floor(Math.random() * 19) + 1;
+                        var r = Math.floor(Math.random() * num) + 1;
                         resArr[r-1] += 1;
                         st +=r + ", "; 
                     }
