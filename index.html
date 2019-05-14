@@ -11,14 +11,15 @@
     </head>
     <body>
         <h1>
-            This page is for Younghan-Lee The Master of Chef de cuisine(HE IS NOT KOREAN).<br>
+            This page is for Younghan-Lee The Master of Chef de cuisine<br>(HE IS NOT KOREAN!)
         </h1>
         <h2>
-            Insert the number to get result. <br>
+            Insert the number to get result.
+            <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,''); calc(this.value);"/> 
         </h2>
         
-        <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,''); calc(this.value);"/> 
-        <br><br>
+        
+        <br>
         <a id="result">
             The output will be printed here
         </a>
@@ -35,20 +36,20 @@
                     for (i = 0; i < 19; i++) {
                         resArr[i] = 0;
                     }
-                    var st;
+                    var st = "";
                     var n = parseInt(txt);
                     
-                    st += n + " tries...";
+                    st += n + " tries...The random number are: ";
                     for (i = 0; i < n; i++) {
                         var r = Math.floor(Math.random() * 19) + 1;
                         resArr[r-1] += 1;
-                        st += "\n--for " + (i+1) + " attempt, the random number is " + r; 
+                        st +=r + ", "; 
                     }
                     st += "\n\n----------result-----------\n"
                     resArr.forEach(function(e, i){
                         st += (i+1) + ": " + e + " ... ";
                         for (j = 0;j < e;j++) {
-                            st += "#";
+                            st += "♥";
                         }
                         st += "\n";
                     });
