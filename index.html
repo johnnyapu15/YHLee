@@ -8,18 +8,19 @@
             }
         </style>
         <script>
-            $("box").change(function() {
-                res = "";
-                n = $("box").text();
-                res += n;
-                $("result").text() = res;
-            })
+            var res = document.getElementById("result");
+            function calc() {
+                var n = parseInt(document.getElementById("box").innerText);
+                res.innerText = n;
+            }
+
         </script>
     </head>
     <body>
         This page is for Younghan-Lee The Master of Chef de cuisine(NOT KOREAN).
         Insert the number to get result.
-        <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"/> 
+        <input type="text" id="box" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" onchange="calc()"/> 
+        \n\n
         <a id="result">
             The output will be printed here
         </a>
